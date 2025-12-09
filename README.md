@@ -1,31 +1,15 @@
-# Oracle - AUR Helper Wrapper
+# Oracle - AUR Helper Wrapper (C++ Implementation)
 
-Oracle is a modern graphical user interface wrapper for AUR helpers and Pacman, designed to make package management on Arch Linux more accessible and user-friendly.
+Oracle is a modern graphical user interface wrapper for AUR helpers and Pacman, designed to make package management on Arch Linux more accessible and user-friendly. This is a C++ implementation of the original [Python Oracle application](https://github.com/0xgingi/oracle).
 
 ![image](https://github.com/user-attachments/assets/4253408c-736b-4985-9f6a-00833cdc9bda)
-
-
-v0.0.1 Notes:
-  - Only tested with Pacman and yay, but other AUR helpers should work! 
-  - Installing, Removing, and Updating packages is functional
-  - Need to improve UI and fix rare crashes
-
-## Features
-
-- 🔍 Search packages in both official repositories and AUR
-- 📦 Install packages with a simple click
-- 🔄 Check for system updates
-- 🚀 Perform system-wide updates
-- 🗑️ Remove packages with dependency handling
-- 📝 Real-time terminal output viewing
-- 🔐 Secure sudo authentication handling
-- 🎨 Modern dark theme interface
 
 ## Prerequisites
 
 - Arch Linux
-- Python
-- PyQt6
+- C++ compiler (GCC or Clang)
+- Qt6
+- CMake
 - One of the following AUR helpers:
   - yay (recommended)
   - paru
@@ -35,64 +19,31 @@ v0.0.1 Notes:
 
 ## Installation
 
-### Option 1: Using the Pre-built Binary
-
-1. Download the latest release from the [releases page](https://github.com/0xgingi/oracle/releases)
-2. Make the file executable:
-```bash
-chmod +x oracle
-```
-3. Run the application:
-```bash
-./oracle
-```
-
-Optional: Move to your path for system-wide access:
-```bash
-sudo mv oracle /usr/local/bin/
-```
-
-### Option 2: Building from Source
+### Building from Source
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/0xgingi/oracle.git
-cd oracle
+git clone https://github.com/ExilProductions/oracle-cpp.git
+cd oracle-cpp
 ```
 
-2. Install build dependencies inside a venv:
+2. Install build dependencies:
 ```bash
-python -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
+# On Arch Linux
+sudo pacman -S qt6-base cmake
 ```
 
-3. Build the executable:
+3. Build the project:
 ```bash
-python build.py
+mkdir build
+cd build
+cmake ..
+make
 ```
 
-The executable will be created in the `dist` directory.
+The executable will be created in the `build` directory as `Oracle`.
 
 4. Run the application:
 ```bash
-./dist/oracle
-```
-
-### Option 3: Running from Source
-
-1. Clone the repository:
-```bash
-git clone https://github.com/0xgingi/oracle.git
-cd oracle
-```
-
-2. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
-
-3. Run the application:
-```bash
-python aur_manager.py
+./Oracle
 ```
