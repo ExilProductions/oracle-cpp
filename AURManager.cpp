@@ -144,11 +144,12 @@ void AURManager::setupAboutTab()
     title->setFont(QFont("",16,QFont::Bold));
     l->addWidget(title);
 
-    l->addWidget(new QLabel("Author: 0xGingi"));
+    l->addWidget(new QLabel("Author: 0xGingi, Exil Productions"));
     l->addWidget(new QLabel(
         "Oracle is a wrapper for AUR helpers and Pacman.\n"
         "It provides an easy way to search, install, and manage packages from both\n"
-        "the official Arch repositories and the Arch User Repository (AUR).\n\n"));
+        "the official Arch repositories and the Arch User Repository (AUR)."
+        "\nThis is a Re-Implementation in C++ from the Original Version Coded in Python.\n\n"));
 
     l->addStretch();
     m_tabWidget->addTab(w, "About");
